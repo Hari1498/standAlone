@@ -1,0 +1,120 @@
+<ng-container>
+
+  <ng-container *ngIf="type === 'text'">
+    <div class="input-group ">
+      <span *ngIf="viewmultiprefix" class="input-group-text">{{prefixaddons}}</span>
+      <span *ngIf="viewmultiprefix" class="input-group-text">{{prefixaddons2}}</span>
+      <span *ngIf="viewprefix" class="input-group-text">{{prefixaddons}}</span>
+      <input type="text" class="form-control" [disabled]="disabled">
+      <span *ngIf="viewsuffix" class="input-group-text">{{suffixaddons}}</span>
+      <span *ngIf="viewmultisuffix" class="input-group-text">{{suffixaddons}}</span>
+      <span *ngIf="viewmultisuffix" class="input-group-text">{{suffixaddons2}}</span>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="type === 'textarea'">
+    <div class="input-group ">
+      <span *ngIf="viewmultiprefix" class="input-group-text">{{prefixaddons}}</span>
+      <span *ngIf="viewmultiprefix" class="input-group-text">{{prefixaddons2}}</span>
+      <span *ngIf="viewprefix" class="input-group-text">{{prefixaddons}}</span>
+      <input type="text" class="form-control" [disabled]="disabled">
+      <span *ngIf="viewsuffix" class="input-group-text">{{suffixaddons}}</span>
+      <span *ngIf="viewmultisuffix" class="input-group-text">{{suffixaddons}}</span>
+      <span *ngIf="viewmultisuffix" class="input-group-text">{{suffixaddons2}}</span>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="type === 'multipleinputs'">
+    <div class="input-group ">
+      <span *ngIf="viewprefix" class="input-group-text">{{prefixaddons}}</span>
+      <input type="text" class="form-control">
+      <span *ngIf="viewaddons" class="input-group-text">{{addons}}</span>
+      <input type="text" class="form-control">
+      <span *ngIf="viewsuffix" class="input-group-text">{{suffixaddons}}</span>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="type === 'url'">
+    <div>
+      <label class="form-label">{{label}}</label>
+      <div class="input-group">
+
+        <span *ngIf="viewaddons" class="input-group-text ">{{addons}}</span>
+        <input type="text" class="form-control">
+      </div>
+      <div class="form-text" id="basic-addon4">{{textOutside}}</div>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="type === 'checkboxandradio'">
+    <div class="input-group mb-3">
+      <div class="input-group-text">
+        <input class="{{class}}" type={{types}} value="" aria-label="Checkbox for following text input">
+      </div>
+      <input type="text" class="form-control" aria-label="Text input with checkbox">
+    </div>
+  </ng-container>
+  <ng-container *ngIf="type === 'inputWithButton'">
+    <div class="input-group mb-3">
+
+      <button *ngIf="button==='start'" class="btn btn-outline-secondary" type="button"
+        id="button-addon1">Button</button>
+      <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+        aria-describedby="button-addon1">
+      <button *ngIf="button==='end'" class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="type === 'inputWithDropdown'">
+    <div class="input-group mb-3">
+      <input *ngIf="button==='end'" type="text" class="form-control" aria-label="Text input with dropdown button">
+      <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+        aria-expanded="false">Dropdown</button>
+      <ul class="dropdown-menu" name="thing">
+        <li><a class="dropdown-item" *ngFor="let thing of things; let i = index;"> {{thing.name}}</a></li>
+
+      </ul>
+      <input *ngIf="button==='start'" type="text" class="form-control" aria-label="Text input with dropdown button">
+    </div>
+  </ng-container>
+  <ng-container *ngIf="type === 'inputWithDropdownAndButton'">
+    <div class="input-group mb-3">
+      <input *ngIf="button==='end'" type="text" class="form-control"
+        aria-label="Text input with segmented dropdown button">
+      <button type="button" class="btn btn-outline-secondary">Action</button>
+      <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+        data-bs-toggle="dropdown" aria-expanded="false">
+        <span class="visually-hidden">Toggle Dropdown</span>
+      </button>
+      <ul class="dropdown-menu" name="thing">
+        <li><a class="dropdown-item" *ngFor="let thing of things; let i = index;"> {{thing.name}}</a></li>
+
+      </ul>
+      <input *ngIf="button==='start'" type="text" class="form-control"
+        aria-label="Text input with segmented dropdown button">
+    </div>
+
+  </ng-container>
+  <ng-container *ngIf="type === 'selectWithLabel'">
+    <div class="input-group mb-3">
+      <button *ngIf="button==='start'" class="btn btn-outline-secondary" type="button">Button</button>
+      <label *ngIf="button==='start-l'" class="input-group-text" for="inputGroupSelect01">Options</label>
+      <select class="form-select" name="thing">
+        <option *ngFor="let thing of things; let i = index;" [value]="i">
+          {{thing.name}}
+        </option>
+      </select>
+      <button *ngIf="button==='end'" class="btn btn-outline-secondary" type="button">Button</button>
+      <label *ngIf="button==='end-l'" class="input-group-text" for="inputGroupSelect01">Options</label>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="type === 'customFileInput'">
+    <div class="input-group mb-3">
+      <button *ngIf="button==='start'" class="btn btn-outline-secondary" type="button"
+        id="inputGroupFileAddon03">Button</button>
+      <label *ngIf="button==='start-l'" class="input-group-text" for="inputGroupFile01">Upload</label>
+      <input type="file" class="form-control" id="inputGroupFile01">
+      <button *ngIf="button==='end'" class="btn btn-outline-secondary" type="button"
+        id="inputGroupFileAddon03">Button</button>
+      <label *ngIf="button==='end-l'" class="input-group-text" for="inputGroupFile01">Upload</label>
+    </div>
+  </ng-container>
+</ng-container>

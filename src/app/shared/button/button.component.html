@@ -1,0 +1,25 @@
+<ng-container>
+    <ng-container *ngIf="type === 'button'">
+        <button class="{{class}}" [disabled]="disabled" [type]="type" [style]="style">{{label}}</button>
+    </ng-container>
+
+    <ng-container *ngIf="type === 'buttonLink'">
+        <a class="{{class}}" [type]="type" [style]="style">{{label}}</a>
+    </ng-container>
+    <ng-container *ngIf="type === 'blockbutton'">
+        <div class="{{class}}">
+            <button class="{{buttonColor1}}">Button</button>
+            <button class="{{buttonColor2}}">Button</button>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="type === 'button end'">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button class="{{class}} me-md-2" type="button">Button</button>
+            <button class="{{class}}" type="button">Button</button>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="type === 'toggle'">
+        <button type="button" class="{{class}} active" data-bs-toggle="button" aria-pressed="true">Active toggle
+            button</button>
+    </ng-container>
+</ng-container>

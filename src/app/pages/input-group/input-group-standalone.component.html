@@ -1,0 +1,78 @@
+<div class="container-fluid mt-3 main">
+  <div class="mb-3">
+    <div class="col-12">
+      <mat-card-header class="mt-3 d-flex">
+        <div class="header-padding">
+          <div class="mt-2 header-label">Input Group</div>
+        </div>
+      </mat-card-header>
+    </div>
+  </div>
+  <form autocomplete="off">
+    <div class="row px-2 mb-4">
+      <div class="col-xl-2 col-md-10">
+        <label class="lable">Disabled </label>
+        <app-input-group [disabled]="!viewOnly" [viewsuffix]="true" [viewprefix]="true" type="text" prefixaddons="@"
+          suffixaddons=".00"></app-input-group>
+      </div>
+      <div class="col-xl-2 col-md-10">
+        <label class="lable">Multiple Input prefixAddons </label>
+        <app-input-group type="multipleinputs" [viewprefix]="true" prefixaddons="@"></app-input-group>
+      </div>
+      <div class="col-xl-2 col-md-10">
+        <label class="lable">Multiple Input </label>
+        <app-input-group type="multipleinputs" addons="@" [viewaddons]="true"></app-input-group>
+      </div>
+      <div class="col-xl-2 col-md-10">
+        <app-input-group type="url" addons="@" label="URL" [viewaddons]="true" textOutside="Example help text"
+          button="end"></app-input-group>
+      </div>
+      <div class="col-xl-2 col-md-10">
+        <label class="lable">Input Size </label>
+        <app-input-group type="text" [viewprefix]="true" class="input-group-lg" prefixaddons="@"></app-input-group>
+      </div>
+
+    </div>
+    <div class="row px-2 mb-4">
+      <div class="col-xl-3 col-md-10">
+        <label class="lable">Multiple addons</label>
+        <app-input-group [viewmultisuffix]="true" [viewmultiprefix]="true" type="text" prefixaddons="@"
+          prefixaddons2="@" suffixaddons=".00" suffixaddons2=".00"></app-input-group>
+      </div>
+      <div class="col-xl-2 col-md-10">
+        <label class="lable"> Checkboxes and radios</label>
+        <app-input-group type="checkboxandradio" class="form-check-input mt-0" types="checkbox"></app-input-group>
+      </div>
+      <div class="col-xl-3 col-md-10">
+        <label class="lable"> Button addons with input</label>
+        <app-input-group type="inputWithButton" class="input-group-lg" button="start"></app-input-group>
+      </div>
+      <div class="col-xl-3 col-md-10">
+        <label class="lable"> Button addons with input</label>
+        <app-input-group type="inputWithDropdown" class="input-group-lg" button="end" [things]="list"></app-input-group>
+      </div>
+    </div>
+    <div class="row px-2 mb-4">
+      <div class="col-xl-3 col-md-10">
+        <label class="lable"> Segmented buttons</label>
+        <app-input-group type="inputWithDropdownAndButton" class="input-group-lg" button="start"
+          [things]="list"></app-input-group>
+      </div>
+      <div class="col-xl-3 col-md-10">
+        <label class="lable">Custom forms & Custom select</label>
+        <app-input-group type="selectWithLabel" class="input-group-lg" button="start-l"
+          [things]="list"></app-input-group>
+      </div>
+      <div class="col-xl-3 col-md-10">
+        <label class="lable">Custom file input </label>
+        <app-input-group type="customFileInput" class="input-group" button="end"></app-input-group>
+      </div>
+    </div>
+    <div class="mt-2">
+      <label>Textarea</label>
+      <app-input-group type="textarea" [viewsuffix]="true" [viewprefix]="true" prefixaddons="@"
+        suffixaddons=".00"></app-input-group>
+    </div>
+
+  </form>
+</div>

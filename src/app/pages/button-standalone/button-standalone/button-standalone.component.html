@@ -1,0 +1,88 @@
+
+<div class="container-fluid mt-3 main">
+
+    <div class="mb-3">
+        <div class="col-12">
+            <mat-card-header class="mt-3 d-flex ">
+                <div class="header-padding">
+                    <div class="mt-2 header-label">Button</div>
+                </div>
+            </mat-card-header>
+        </div>
+    </div>
+    <form autocomplete="off">
+
+        <div class="row px-1 mb-2">
+            <div class="col-xl-2 col-md-10">
+                <label class="lable"> Variants</label><br>
+                <app-button label="primary" type="button" [class]="'btn btn-primary'">
+                </app-button>
+            </div>
+            <div class="col-xl-2 col-md-10">
+                <label class="lable"> Variants</label><br>
+                <app-button label="Success Link" type="buttonLink" [class]="'btn btn-success'">
+                </app-button>
+            </div>
+            <div class="col-xl-2 col-md-10">
+                <label class="lable"> links</label><br>
+                <app-button label="Link" type="button" [class]="'btn btn-link'">
+                </app-button>
+            </div>
+
+            <div class="col-xl-2 col-md-10">
+                <label class="lable"> Button Sizes -lg</label>
+                <app-button label="Large button" type="button" [class]="'btn btn-primary btn-lg'">
+                </app-button>
+            </div>
+            <div class="col-xl-2 col-md-10">
+                <label class="lable"> Button Sizes -sm</label>
+                <app-button label="Small button" type="button" [class]="'btn btn-primary btn-sm'">
+                </app-button>
+            </div>
+            <div class="col-xl-2 col-md-10">
+                <label class="lable"> Disable State</label><br>
+                <app-button label="Disabled state" [disabled]="!viewOnly" type="button" [class]="'btn btn-secondary'">
+                </app-button>
+            </div>
+
+        </div>
+        <div class="row px-1 mt-2">
+            <div class="col-xl-2 col-md-10">
+                <label class="lable"> Button tags</label><br>
+                <app-button label="button" type="button" [class]="'btn btn-primary'">
+                </app-button>
+            </div>
+            <div class="col-xl-2 col-md-10">
+                <label class="lable">Outline buttons</label><br>
+                <app-button label="success" type="button" [class]="'btn btn-outline-success'">
+                </app-button>
+            </div>
+            <div class="col-xl-2 col-md-10">
+                <label class="lable">Custom buttons</label><br>
+                <app-button label="success" type="button"
+                    style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                    [class]="'btn btn-danger'">
+                </app-button>
+            </div>
+            <div class="col-xl-2 col-md-10">
+                <label class="lable">toggle active buttons</label><br>
+                <app-button label="success" type="toggle" [class]="'btn btn-primary'">
+                </app-button>
+            </div>
+            <div class="col-xl-2 col-md-10">
+                <label class="lable">Block buttons</label>
+                <app-button label="success" type="blockbutton" [class]="'d-grid gap-2 '"
+                    [buttonColor1]="'btn btn-primary'" [buttonColor2]="'btn btn-warning'">
+                </app-button>
+            </div>
+        </div>
+
+        <div class="">
+            <label class="lable">Right Align</label>
+            <app-button label="success" type="blockbutton" [class]="'d-grid gap-2 d-md-flex justify-content-md-end '"
+                [buttonColor1]="'btn btn-primary'" [buttonColor2]="'btn btn-warning'">
+            </app-button>
+        </div>
+    </form>
+
+</div>

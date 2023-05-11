@@ -1,0 +1,9 @@
+<ng-container>
+  <ng-container *ngIf="type === 'range'">
+    <div class="{{class}}">
+      <label [for]="for">{{label}}</label>
+      <input type="range" [step]="step" [min]="min" [max]="max" [readonly]="isReadOnly" [disabled]="disabled"
+        class="{{class}}" [id]="id" [placeholder]="placeholder" [value]="value" />
+    </div>
+  </ng-container>
+</ng-container>
